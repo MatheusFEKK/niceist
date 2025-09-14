@@ -21,7 +21,6 @@ router.get('/', (req, res) => {
         
         res.render('index', {data: results})
     });
-
 });
 
 router.post('/addNote', (req, res) => {
@@ -56,8 +55,67 @@ router.get('/deleteNote/:id', (req, res) => {
                 res.json(results);
             }
                 res.redirect('/exnoting');
-            
         });
+    }
+});
+
+router.post('/editNote/:id/:noteDescription', (req, res) => {
+    const idNote = req.params.id;
+    const noteDescription = req.params.noteDescription;
+
+    if (idNote != null && noteDescription != null)
+    {
+        databaseConnection.query(`UPDATE notes SET noteDescription = '${noteDescription}' WHERE idNote = ${idNote}`, (error, results, fields) => {
+            if (error)
+            {
+                res.json(error);
+            }
+            if (process.env.API_MODE === "TRUE")
+            {
+                res.json(results);
+            }
+                res.redirect('/exnoting');
+        });
+    }
+});
+
+router.post('/doneNote/:id', (req, res) => {
+    const idNote = req.params.id;
+
+    if (idNote != null)
+    {
+        databaseConnection.query(`UPDATE notes SET noteChecked = 1 WHERE idNote = ${idNote}`, (error, results, fields) => {
+            if (error)
+            {
+                res.json(error);
+            }
+
+            if (process.env.API_MODE === "TRUE")
+            {
+                res.json(results);
+            }
+            res.redirect('/exnoting')
+        })
+    }
+});
+
+router.post('/undoneNote/:id', (req, res) => {
+    const idNote = req.params.id;
+
+    if (idNote != null)
+    {
+        databaseConnection.query(`UPDATE notes SET noteChecked = 0 WHERE idNote = ${idNote}`, (error, results, fields) => {
+            if (error)
+            {
+                res.json(error);
+            }
+
+            if (process.env.API_MODE === "TRUE")
+            {
+                res.json(results);
+            }
+            res.redirect('/exnoting')
+        })
     }
 });
 

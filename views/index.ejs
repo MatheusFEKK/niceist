@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Document</title>
+    <title>Niceist</title>
 </head>
 <body>
     <nav>
@@ -16,24 +16,47 @@
             </div>
         </form>
     </nav>
-    <% data.forEach((note) => { %>
-      <div class="container-fluid">
+    <div class="container-fluid">
+    <% data.forEach((note) => { if (note.noteChecked === 0){ %>
         <div class="main-notas">
-            <div class="notas">
-                <h3><%=note.noteDescription%></h3>
-                <img class="lapisimagem" src="/imagens/lapisimagem.png" alt="">
-            </div>
-            <button class="adicionar"> <img class="fotoAdicionar" src="/imagens/checksemfundo.png" alt=""> </button>
+            <button class="notas" onclick="editTask(this,'<%=note.idNote%>')">
+        <input class="notasInput" style="height: 100%; width: 100%; font-size: 20px; font-weight: bold;"  type="text" value="<%=note.noteDescription%>" disabled>
+            <img class="lapisimagem" src="/imagens/lapisimagem.png" alt="">
+        </button>
+        </input>
+                <form action="/exnoting/doneNote/<%=note.idNote%>" method="POST">
+                    <button href="" class="adicionar"> <img class="fotoAdicionar" src="/imagens/checksemfundo.png" alt=""> </button>
+                </form>
             <a href="/exnoting/deleteNote/<%=note.idNote%>">
                 <img class="fotoAdicionar" src="/imagens/lixeiraicon.png" alt=""> 
             </a>
             
         </div>
         <hr>
-    <%     }); %>
-    
+    <%     }}); %>
 
-
+     <% data.forEach((note) => { if (note.noteChecked === 1){%>
+        <div class="main-notas">
+            <button class="notas" onclick="editTask(this,'<%=note.idNote%>')">
+        <input class="notasInput" style="height: 100%; width: 100%; font-size: 20px; font-weight: bold;"  type="text" value="<%=note.noteDescription%>" disabled>
+        <h4 style="font-weight: bold;">TASK FINISHED</h4>
+            <img class="lapisimagem" src="/imagens/lapisimagem.png" alt="">
+        </button>
+        </input>
+                <form action="/exnoting/undoneNote/<%=note.idNote%>" method="POST">
+                    <button type="submit" class="adicionar"> <img class="fotoAdicionar" src="/imagens/close-icon-13612.png" alt=""> </button>
+                </form>
+            <a href="/exnoting/deleteNote/<%=note.idNote%>">
+                <img class="fotoAdicionar" src="/imagens/lixeiraicon.png" alt=""> 
+            </a>
+            
+        </div>
+        <hr>
+        <%     }}); %>
     </div>
+
+
+
+    <script src="script/script.js"></script>
 </body>
 </html>
