@@ -1,16 +1,17 @@
-import express from 'express'
-const app = express()
-const port = 3000
+import express from 'express';
+import router from './routes/web.js';
 
-app.get('/', (req, res)=>{
-    res.send("Hello Word")
-})
+const app = express();
+const port = 3000;
 
-app.use(express. static('public'))
+app.use(express.static('public'));
 
-app. listen(port, ()=>{
-    console.log('O app startou')
-})
+app.use(express.urlencoded({extended:true}));
 
+app.set('view engine', 'ejs');
 
+app.use('/exnoting', router);
 
+app.listen(port, () => {
+    console.log(`App running on port ${port}`);
+});

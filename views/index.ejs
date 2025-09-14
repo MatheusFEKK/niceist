@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <form action="/exnoting/addNote" method="POST">
+            <div class="pesquisar">
+                <input type="text" id="escrever" name="noteDescription" placeholder="Escreva sua task...">
+                <button class="adicionar"> <img class="fotoAdicionar" src="/imagens/aaaaaaaaaaaa-removebg-preview.png" alt=""> </button">
+                    <button class="adicionar"> <img class="fotoAdicionar" src="/imagens/microfoneimagem.png" alt=""> </button">
+            </div>
+        </form>
+    </nav>
+    <% data.forEach((note) => { %>
+      <div class="container-fluid">
+        <div class="main-notas">
+            <div class="notas">
+                <h3><%=note.noteDescription%></h3>
+                <img class="lapisimagem" src="/imagens/lapisimagem.png" alt="">
+            </div>
+            <button class="adicionar"> <img class="fotoAdicionar" src="/imagens/checksemfundo.png" alt=""> </button>
+            <a href="/exnoting/deleteNote/<%=note.idNote%>">
+                <img class="fotoAdicionar" src="/imagens/lixeiraicon.png" alt=""> 
+            </a>
+            
+        </div>
+        <hr>
+    <%     }); %>
+    
+
+
+    </div>
+</body>
+</html>

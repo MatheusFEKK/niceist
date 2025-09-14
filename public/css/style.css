@@ -21,6 +21,7 @@ body{
     gap: 10px;
     align-items: center;
     margin-top: 30px;
+    
 }
 
 .notas{
@@ -32,6 +33,7 @@ body{
     box-shadow: 1px 1px 1px black;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
 .pesquisar{
@@ -40,6 +42,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 #escrever{
@@ -48,6 +51,12 @@ body{
     background-color: white;
     border-radius: 10px;
     border: none;
+    box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
+#escrever:placeholder-shown{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .adicionar{
@@ -59,7 +68,7 @@ body{
     border-radius: 8px;
     justify-content: center;
     border: none;
-    box-shadow: 1px 1px 1px 1px;
+    box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
 .fotoAdicionar{
