@@ -1,0 +1,79 @@
+body{
+    background-color: #744d3a;
+}
+
+.container-fluid{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+    border-radius: 10px;
+    background-color: #e5cdac;
+    box-shadow: 1px 1px 1px 1px;
+
+}
+
+.main-notas{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.notas{
+    display: flex;
+    height: 3rem;
+    width: 80%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 1px black;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pesquisar{
+    margin-top: 30px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#escrever{
+    height: 3rem;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.adicionar{
+    height: 3rem;
+    width: 3rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    border: none;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.fotoAdicionar{
+    width: 40px;
+    height: 40px;
+
+}
+
+hr {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  border-width: 1px;
+  height: 1px;
+  width: 100%;
+  border: none;
+}
