@@ -1,0 +1,37 @@
+# 🗒 Niceist – Bloco de Notas Retrô
+
+## 📌 Sobre o Projeto
+
+O **Niceist** é uma aplicação web de bloco de notas com design retrô, desenvolvida com foco em identidade visual diferenciada e experiência nostálgica inspirada em interfaces clássicas.
+
+O projeto combina simplicidade funcional com uma estética vintage, explorando criatividade e personalização visual no desenvolvimento front-end.
+
+---
+
+## 🎯 Objetivo do Projeto
+
+O projeto teve como objetivo:
+
+- Criar uma aplicação simples e funcional  
+- Explorar identidade visual retrô  
+- Trabalhar estilização personalizada com CSS  
+- Praticar manipulação básica com JavaScript  
+- Desenvolver organização estrutural de projeto  
+
+---
+
+## 🚀 Funcionalidades
+
+- 📝 Área para criação de anotações  
+- 🎨 Interface com estética retrô  
+- 📱 Layout responsivo  
+- 💾 Estrutura preparada para futuras melhorias  
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- HTML5  
+- CSS3  
+- JavaScript  
+- PHP
